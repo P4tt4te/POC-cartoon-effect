@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import { Selection, Select, EffectComposer, Outline } from '@react-three/postprocessing'
 import { BackSide, FrontSide } from 'three'
 
 function Box(props) {
