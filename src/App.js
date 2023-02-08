@@ -41,7 +41,7 @@ function BoxFront(props) {
 
 function Car(props) {
   const group = useRef()
-  const { nodes, materials, scene } = useGLTF('assets/land_rover_defender/scene.gltf')
+  const { nodes, materials, scene } = useGLTF('assets/test.glb')
 
   return <primitive ref={group} object={scene} dispose={null} />
 }
@@ -50,20 +50,8 @@ export default function App() {
   return (
     <Canvas dpr={[1, 2]}>
       <OrbitControls />
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
-      <Selection>
-        <EffectComposer multisampling={16} autoClear={false}>
-          <Outline visibleEdgeColor="black" edgeStrength={3} width={1000} height={1000} xRay={false} />
-        </EffectComposer>
-        <Select enabled>
-          <Car position={[0, 0, 0]} />
-        </Select>
-        <Select enabled>
-          <BoxFront />
-        </Select>
-      </Selection>
+      <ambientLight intensity={0.8} />
+      <Car position={[0, 0, 0]} />
     </Canvas>
   )
 }
